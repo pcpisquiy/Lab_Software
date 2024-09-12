@@ -28,5 +28,20 @@ namespace Lab_Software.Controllers
             sr.Close();
             return ListaUsuarios;
         }
+        [HttpDelete("EliminarUsuario/{correoElectronico}")]
+        public ActionResult Delete(string correoElectronico)
+        {
+            var usuario = ListaUsuarios.FirstOrDefault(u => u.Correo_Electronico == correoElectronico);
+            if (usuario == null)
+            {
+                return NotFound(new { mensaje = "Usuario no encontrado." });
+            }
+            ListaUsuarios.Remove(usuario);
+            var lineas = System.IO.File.ReadAllLines(archivoRuta).ToList();
+            var lineasFiltradas = lineas.Where(l => !l.Contains(correoElectronico)).ToList();
+            System.IO.File.WriteAllLines(archivoRuta, lineasFiltradas);
+
+            return Ok(new { mensaje = "Usuario eliminado con éxito." });
+        }
     }
 }
