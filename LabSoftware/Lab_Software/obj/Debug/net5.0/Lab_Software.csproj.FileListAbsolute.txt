@@ -26,3 +26,31 @@ D:\Programaciones\PCPP\Universidad\IngSoftware\Lab_Software\LabSoftware\Lab_Soft
 D:\Programaciones\PCPP\Universidad\IngSoftware\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\ref\Lab_Software.dll
 D:\Programaciones\PCPP\Universidad\IngSoftware\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.pdb
 D:\Programaciones\PCPP\Universidad\IngSoftware\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.genruntimeconfig.cache
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\appsettings.json
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Lab_Software.exe
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Lab_Software.deps.json
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Lab_Software.runtimeconfig.json
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Lab_Software.runtimeconfig.dev.json
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Lab_Software.dll
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Lab_Software.pdb
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.csproj.AssemblyReference.cache
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.AssemblyInfoInputs.cache
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.AssemblyInfo.cs
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.csproj.CoreCompileInputs.cache
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\scopedcss\bundle\Lab_Software.styles.css
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\staticwebassets\Lab_Software.StaticWebAssets.Manifest.cache
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.RazorTargetAssemblyInfo.cache
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.csproj.CopyComplete
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.dll
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\refint\Lab_Software.dll
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.pdb
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\Lab_Software.genruntimeconfig.cache
+C:\Users\jmmr1\OneDrive\Documentos\Software Engeneering\2024\semestre 2\Ing. software\Lab_Software\LabSoftware\Lab_Software\obj\Debug\net5.0\ref\Lab_Software.dll
