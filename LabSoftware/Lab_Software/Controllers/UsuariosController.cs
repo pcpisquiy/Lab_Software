@@ -13,20 +13,37 @@ namespace Lab_Software.Controllers
     [Route("[controller]")]
     public class UsuariosController : ControllerBase
     {
+        public UsuariosController() {
+            GenerarLista();
+        }
        private static  List<UsuarioDTO> ListaUsuarios = new List<UsuarioDTO>();
+        protected string FilePath = Directory.GetCurrentDirectory() + "\\bin\\Debug\\net5.0\\MOCK_DATA.csv";
         [HttpGet("ListarUsuarios")]
         public ActionResult<List<UsuarioDTO>> Get() {
-            return new List<UsuarioDTO>();
+            return ListaUsuarios;
         }
-        [HttpGet("ObtenerArchivo")]
-        public ActionResult<List<UsuarioDTO>> ObeterArchivo() {
-            StreamReader sr = new StreamReader(Directory.GetCurrentDirectory() + "\\bin\\Debug\\net5.0\\MOCK_DATA.csv");
+        protected void GenerarLista() {
+            StreamReader sr = new StreamReader(FilePath);
             
             while (!sr.EndOfStream) {
                 ListaUsuarios.Add(new UsuarioDTO(sr.ReadLine()));
             }
             sr.Close();
-            return ListaUsuarios;
+        }
+        [HttpDelete("EliminarUsuario/{correoElectronico}")]
+        public ActionResult Delete(string correoElectronico)
+        {
+            var usuario = ListaUsuarios.FirstOrDefault(u => u.Correo_Electronico == correoElectronico);
+            if (usuario == null)
+            {
+                return NotFound(new { mensaje = "Usuario no encontrado." });
+            }
+            ListaUsuarios.Remove(usuario);
+            var lineas = System.IO.File.ReadAllLines(FilePath).ToList();
+            var lineasFiltradas = lineas.Where(l => !l.Contains(correoElectronico)).ToList();
+            System.IO.File.WriteAllLines(FilePath, lineasFiltradas);
+
+            return Ok(new { mensaje = "Usuario eliminado con éxito." });
         }
     }
 }

@@ -19,12 +19,27 @@ namespace Lab_Software.DTO
         public UsuarioDTO(string Data)
         {
             string[] TuplaUsuario = Data.Split(',');
-            Nombre_Completo = TuplaUsuario[0];
-            Correo_Electronico = TuplaUsuario[1];
-            Contraseña = TuplaUsuario[2];
-            Edad = int.Parse(TuplaUsuario[3]);
-            Pais = TuplaUsuario[4];
-            Numero_de_Telefono = TuplaUsuario[5];
+            if (TuplaUsuario.Length > 6)
+            {
+                int Inicio = 0;
+                Nombre_Completo = TuplaUsuario[0];
+                Correo_Electronico = TuplaUsuario[1];
+                
+                for (Inicio = 2; Inicio <= TuplaUsuario.Length - 3; Inicio++) {
+                    Contraseña += TuplaUsuario[Inicio];
+                }
+                Edad = TuplaUsuario[TuplaUsuario.Length - 3] == string.Empty ? 0 : int.Parse(TuplaUsuario[TuplaUsuario.Length - 3]);
+                Pais = TuplaUsuario[TuplaUsuario.Length - 2];
+                Numero_de_Telefono = TuplaUsuario[TuplaUsuario.Length-1];
+            }
+            else {
+                Nombre_Completo = TuplaUsuario[0];
+                Correo_Electronico = TuplaUsuario[1];
+                Contraseña = TuplaUsuario[2];
+                Edad = TuplaUsuario[3] == string.Empty ? 0 : int.Parse(TuplaUsuario[3]);
+                Pais = TuplaUsuario[4];
+                Numero_de_Telefono = TuplaUsuario[5];
+            }
         }
 
         /// <summary>
