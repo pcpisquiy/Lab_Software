@@ -28,5 +28,15 @@ namespace Lab_Software.Controllers
             sr.Close();
             return ListaUsuarios;
         }
+
+        [HttpPost("AgregarUsuario")]
+        public ActionResult<UsuarioDTO> CrearUsuario([FromBody] UsuarioDTO nuevoUsuario)
+        {
+            if (!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+            ListaUsuarios.Add(nuevoUsuario);
+            return Ok(nuevoUsuario);
+        }
     }
 }
