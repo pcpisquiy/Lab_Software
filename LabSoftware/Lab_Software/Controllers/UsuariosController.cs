@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Lab_Software.DTO;
 using System.IO;
+using Lab_Software.Helpers;
+
 namespace Lab_Software.Controllers
 {
     
@@ -15,18 +17,26 @@ namespace Lab_Software.Controllers
     {
         public UsuariosController() {
             GenerarLista();
+            Validador = new ValidacionesGenerales(ListaUsuarios);
         }
-       private static  List<UsuarioDTO> ListaUsuarios = new List<UsuarioDTO>();
+        
+        private static List<UsuarioDTO> ListaUsuarios = new List<UsuarioDTO>();
+        
         protected string FilePath = Directory.GetCurrentDirectory() + "\\bin\\Debug\\net5.0\\MOCK_DATA.csv";
+
+        private static ValidacionesGenerales Validador;
+
         [HttpGet("ListarUsuarios")]
         public ActionResult<List<UsuarioDTO>> Get() {
             return ListaUsuarios;
         }
         protected void GenerarLista() {
             StreamReader sr = new StreamReader(FilePath);
-            
+
+            int identificadorUsuario = 1;
             while (!sr.EndOfStream) {
-                ListaUsuarios.Add(new UsuarioDTO(sr.ReadLine()));
+                ListaUsuarios.Add(new UsuarioDTO(sr.ReadLine(), identificadorUsuario));
+                identificadorUsuario++;
             }
             sr.Close();
         }
@@ -44,6 +54,50 @@ namespace Lab_Software.Controllers
             System.IO.File.WriteAllLines(FilePath, lineasFiltradas);
 
             return Ok(new { mensaje = "Usuario eliminado con éxito." });
+        }
+
+        [HttpPut("AcualizarUsurio/{id}")]
+        public ActionResult ActualizarUsuario(int id, [FromBody] UsuarioDTO usuarioActualizar)
+        {
+            bool usuarioValido = ListaUsuarios.Exists(usuario => usuario.IdentificadorUsuario == id);
+            if (!usuarioValido)
+            {
+                return NotFound(new { mensaje = "Usuario no encontrado." });
+            }
+
+            int indiceUsuario = ListaUsuarios.FindIndex(usuario => usuario.IdentificadorUsuario == id);
+
+            if (!string.IsNullOrEmpty(usuarioActualizar.Nombre_Completo) && Validador.ValidarNombre(usuarioActualizar.Nombre_Completo))
+            {
+                ListaUsuarios[indiceUsuario].Nombre_Completo = usuarioActualizar.Nombre_Completo;
+            }
+
+            if (!string.IsNullOrEmpty(usuarioActualizar.Correo_Electronico) && Validador.ValidarCorreo(usuarioActualizar.Correo_Electronico))
+            {
+                ListaUsuarios[indiceUsuario].Correo_Electronico = usuarioActualizar.Correo_Electronico;
+            }
+
+            if (!string.IsNullOrEmpty(usuarioActualizar.Contraseña) && Validador.ValidarContra(usuarioActualizar.Contraseña))
+            {
+                ListaUsuarios[indiceUsuario].Contraseña = usuarioActualizar.Contraseña;
+            }
+
+            if (Validador.ValidarEdad(usuarioActualizar.Edad))
+            {
+                ListaUsuarios[indiceUsuario].Edad = usuarioActualizar.Edad;
+            }
+
+            if (!string.IsNullOrEmpty(usuarioActualizar.Pais) && Validador.ValidarPais(usuarioActualizar.Pais))
+            {
+                ListaUsuarios[indiceUsuario].Pais = usuarioActualizar.Pais;
+            }
+
+            if (Validador.ValidarTelefono(usuarioActualizar.Numero_de_Telefono))
+            {
+                ListaUsuarios[indiceUsuario].Edad = usuarioActualizar.Edad;
+            }
+
+            return Ok(new { mensaje = "Usuario actualizado con éxito.", usario = ListaUsuarios[indiceUsuario] });
         }
     }
 }
