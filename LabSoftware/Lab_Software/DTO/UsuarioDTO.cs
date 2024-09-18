@@ -9,6 +9,7 @@ namespace Lab_Software.DTO
     {
         public UsuarioDTO()
         {
+            IdentificadorUsuario = 0;
             Nombre_Completo = string.Empty;
             Correo_Electronico = string.Empty;
             Contraseña = string.Empty;
@@ -16,12 +17,14 @@ namespace Lab_Software.DTO
             Pais = string.Empty;
             Numero_de_Telefono = string.Empty;
         }
-        public UsuarioDTO(string Data)
+
+        public UsuarioDTO(string Data, int identificadorUsuario)
         {
             string[] TuplaUsuario = Data.Split(',');
             if (TuplaUsuario.Length > 6)
             {
                 int Inicio = 0;
+                IdentificadorUsuario = identificadorUsuario;
                 Nombre_Completo = TuplaUsuario[0];
                 Correo_Electronico = TuplaUsuario[1];
                 
@@ -33,6 +36,7 @@ namespace Lab_Software.DTO
                 Numero_de_Telefono = TuplaUsuario[TuplaUsuario.Length-1];
             }
             else {
+                IdentificadorUsuario = identificadorUsuario;
                 Nombre_Completo = TuplaUsuario[0];
                 Correo_Electronico = TuplaUsuario[1];
                 Contraseña = TuplaUsuario[2];
@@ -41,6 +45,8 @@ namespace Lab_Software.DTO
                 Numero_de_Telefono = TuplaUsuario[5];
             }
         }
+
+        public int IdentificadorUsuario { get; set; }
 
         /// <summary>
         /// Obtiene o establece el nombre completo del usuario.
