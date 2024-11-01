@@ -15,16 +15,16 @@ namespace Lab_Software.Controllers
     [Route("[controller]")]
     public class UsuariosController : ControllerBase
     {
-        public UsuariosController() {
+        public UsuariosController(IValidacionesGenerales validacionesGenerales) {
             GenerarLista();
-            Validador = new ValidacionesGenerales(ListaUsuarios);
+            Validador = validacionesGenerales;
         }
         
         private static List<UsuarioDTO> ListaUsuarios = new List<UsuarioDTO>();
         
-        protected string FilePath = Directory.GetCurrentDirectory() + "\\bin\\Debug\\net5.0\\MOCK_DATA.csv";
+        protected string FilePath = AppDomain.CurrentDomain.BaseDirectory + "/MOCK_DATA.csv";
 
-        private static ValidacionesGenerales Validador;
+        private readonly IValidacionesGenerales Validador;
 
         [HttpGet("ListarUsuarios")]
         public ActionResult<List<UsuarioDTO>> Get() {
@@ -59,13 +59,13 @@ namespace Lab_Software.Controllers
         [HttpPut("AcualizarUsurio/{id}")]
         public ActionResult ActualizarUsuario(int id, [FromBody] UsuarioDTO usuarioActualizar)
         {
-            bool usuarioValido = ListaUsuarios.Exists(usuario => usuario.IdentificadorUsuario == id);
+            bool usuarioValido = Validador.UsuarioValido(id);
             if (!usuarioValido)
             {
                 return NotFound(new { mensaje = "Usuario no encontrado." });
             }
 
-            int indiceUsuario = ListaUsuarios.FindIndex(usuario => usuario.IdentificadorUsuario == id);
+            int indiceUsuario = Validador.ObtenerIndiceUsuario(id);
 
             if (!string.IsNullOrEmpty(usuarioActualizar.Nombre_Completo) && Validador.ValidarNombre(usuarioActualizar.Nombre_Completo))
             {
