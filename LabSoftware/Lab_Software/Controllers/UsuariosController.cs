@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Lab_Software.DTO;
 using System.IO;
 using Lab_Software.Helpers;
-
+using System.Windows;
 namespace Lab_Software.Controllers
 {
     
@@ -22,7 +22,7 @@ namespace Lab_Software.Controllers
         
         private static List<UsuarioDTO> ListaUsuarios = new List<UsuarioDTO>();
         
-        protected string FilePath = AppDomain.CurrentDomain.BaseDirectory + "/MOCK_DATA.csv";
+        protected string FilePath = AppDomain.CurrentDomain.BaseDirectory +"/MOCK_DATA.csv";
 
         private readonly IValidacionesGenerales Validador;
 
