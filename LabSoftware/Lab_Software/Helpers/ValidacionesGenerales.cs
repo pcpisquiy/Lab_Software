@@ -8,7 +8,7 @@ namespace Lab_Software.Helpers
     /// <summary>
     /// Clase con métodos de validaciones generales para el control de información de usuarios
     /// </summary>
-    public class ValidacionesGenerales
+    public class ValidacionesGenerales : IValidacionesGenerales
     {
         #region Atributos privados
 
@@ -94,6 +94,26 @@ namespace Lab_Software.Helpers
         public bool ValidarTelefono(string _telefono)
         {
             return telefonoRegex.IsMatch(_telefono);
+        }
+
+        /// <summary>
+        /// Valida si un usuario existe.
+        /// </summary>
+        /// <param name="identificadorUsuario">Número identificador del usuario</param>
+        /// <returns>Si el usuario existe.</returns>
+        public bool UsuarioValido(int identificadorUsuario)
+        {
+            return ListaUsuarios.Exists(usuario => usuario.IdentificadorUsuario == identificadorUsuario);
+        }
+
+        /// <summary>
+        /// Obtiene el índice correspondiente del usuario a buscar.
+        /// </summary>
+        /// <param name="identificadorUsuario">Número de identificador del usuario.</param>
+        /// <returns>El índice del usuario.</returns>
+        public int ObtenerIndiceUsuario(int identificadorUsuario)
+        {
+            return ListaUsuarios.FindIndex(usuario => usuario.IdentificadorUsuario == identificadorUsuario);
         }
 
         #endregion

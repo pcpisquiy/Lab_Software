@@ -1,13 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Lab_Software.Controllers;
+using Lab_Software.Helpers;
 
 public class EliminarUsuario_Test
 {
     private readonly UsuariosController _controller;
 
+    IValidacionesGenerales validaciones;
+
     public EliminarUsuario_Test()
     {
-        _controller = new UsuariosController();
+        _controller = new UsuariosController(validaciones);
     }
     [Fact]
     public void Delete_UsuarioNoExistente_DeberiaRetornarNotFound()
